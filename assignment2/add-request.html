@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>COM - Add a Capacity Override Request</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<h1> Add Capacity Override Request</h1>
+<br>
+
+<div class="container">
+    <form method="post" class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-1 control-label">Course: </label>
+            <div class="col-sm-4">
+                <select id="courses" class="form-control">
+                    <option value="cmps151">CMPS 151 Programming Concepts</option>
+                    <option value="cmps251">CMPS 251 Object Oriented Progamming</option>
+                    <option value="cmps356">CMPS 356 Entrepise App Development</option>
+                </select>
+            </div>
+        </div>
+        <table id="sections" style="width: auto;" class="table table-hover table-striped table-responsive">
+            <thead>
+                <th></th>
+                <th>CRN</th>
+                <th>Section</th>
+                <th>Capacity</th>
+                <th>Available seats</th>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td></td>
+                <td>15101</td>
+                <td>L01</td>
+                <td>30</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="section" value="15151">
+                </td>
+                <td>15151</td>
+                <td>L51</td>
+                <td>30</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>15152</td>
+                <td>L52</td>
+                <td>30</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="section" value="15153">
+                </td>
+                <td>15153</td>
+                <td>L53</td>
+                <td>30</td>
+                <td>0</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="form-group">
+            <label class="col-sm-1 control-label">Reason: </label>
+            <div class="col-sm-4">
+                <textarea id="comment" class="form-control"
+                  placeholder="Example: available sections conflicts with my schedule"></textarea>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+</div>
+</body>
+</html>

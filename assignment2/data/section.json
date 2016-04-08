@@ -1,0 +1,182 @@
+[
+  {
+    "crn": 1071,
+    "sectionCode": "L01",
+    "courseCode": "GENG107",
+    "semester": "Fall 2016",
+    "instructorId": 12,
+    "capacity": 30,
+    "availableSeats": 0
+  },
+  {
+    "crn": 2001,
+    "sectionCode": "L01",
+    "courseCode": "GENG200",
+    "semester": "Fall 2016",
+    "instructorId": 12,
+    "capacity": 30,
+    "availableSeats": 0
+  },
+  {
+    "crn": 3001,
+    "sectionCode": "L01",
+    "courseCode": "GENG300",
+    "semester": "Fall 2016",
+    "instructorId": 33,
+    "capacity": 30,
+    "availableSeats": 0
+  },
+  {
+    "crn": 3601,
+    "sectionCode": "L01",
+    "courseCode": "GENG360",
+    "semester": "Fall 2016",
+    "instructorId": 33,
+    "capacity": 30,
+    "availableSeats": 0
+  },
+  {
+    "crn": 2111,
+    "sectionCode": "L01",
+    "courseCode": "MATH211",
+    "semester": "Fall 2016",
+    "instructorId": 21,
+    "capacity": 30,
+    "availableSeats": 0
+  },
+  {
+    "crn": 1271,
+    "sectionCode": "L01",
+    "courseCode": "MATH217",
+    "semester": "Fall 2016",
+    "instructorId": 21,
+    "capacity": 30,
+    "availableSeats": 0
+  },
+  {
+    "crn": 1072,
+    "sectionCode": "L02",
+    "courseCode": "GENG107",
+    "semester": "Fall 2016",
+    "instructorId": 12,
+    "capacity": 30,
+    "availableSeats": 1
+  },
+  {
+    "crn": 2002,
+    "sectionCode": "L02",
+    "courseCode": "GENG200",
+    "semester": "Fall 2016",
+    "instructorId": 12,
+    "capacity": 30,
+    "availableSeats": 1
+  },
+  {
+    "crn": 1072,
+    "sectionCode": "L02",
+    "courseCode": "GENG107",
+    "semester": "Fall 2016",
+    "instructorId": 12,
+    "capacity": 30,
+    "availableSeats": 2
+  },
+  {
+    "crn": 2002,
+    "sectionCode": "L02",
+    "courseCode": "GENG200",
+    "semester": "Fall 2016",
+    "instructorId": 12,
+    "capacity": 30,
+    "availableSeats": 3
+  },
+  {
+    "crn": 3002,
+    "sectionCode": "L02",
+    "courseCode": "GENG300",
+    "semester": "Fall 2016",
+    "instructorId": 33,
+    "capacity": 30,
+    "availableSeats": 4
+  },
+  {
+    "crn": 3602,
+    "sectionCode": "L02",
+    "courseCode": "GENG360",
+    "semester": "Fall 2016",
+    "instructorId": 33,
+    "capacity": 30,
+    "availableSeats": 5
+  },
+  {
+    "crn": 2112,
+    "sectionCode": "L02",
+    "courseCode": "MATH211",
+    "semester": "Fall 2016",
+    "instructorId": 21,
+    "capacity": 30,
+    "availableSeats": 6
+  },
+  {
+    "crn": 1272,
+    "sectionCode": "L02",
+    "courseCode": "MATH217",
+    "semester": "Fall 2016",
+    "instructorId": 21,
+    "capacity": 30,
+    "availableSeats": 7
+  },
+  {
+    "crn": 1073,
+    "sectionCode": "L03",
+    "courseCode": "GENG107",
+    "semester": "Fall 2016",
+    "instructorId": 12,
+    "capacity": 30,
+    "availableSeats": 0
+  },
+  {
+    "crn": 2003,
+    "sectionCode": "L03",
+    "courseCode": "GENG200",
+    "semester": "Fall 2016",
+    "instructorId": 12,
+    "capacity": 30,
+    "availableSeats": 0
+  },
+  {
+    "crn": 3003,
+    "sectionCode": "L03",
+    "courseCode": "GENG300",
+    "semester": "Fall 2016",
+    "instructorId": 33,
+    "capacity": 30,
+    "availableSeats": 0
+  },
+  {
+    "crn": 3603,
+    "sectionCode": "L03",
+    "courseCode": "GENG360",
+    "semester": "Fall 2016",
+    "instructorId": 33,
+    "capacity": 30,
+    "availableSeats": 0
+  },
+  {
+    "crn": 2113,
+    "sectionCode": "L03",
+    "courseCode": "MATH211",
+    "semester": "Fall 2016",
+    "instructorId": 21,
+    "capacity": 30,
+    "availableSeats": 0
+  },
+  {
+    "crn": 1273,
+    "sectionCode": "L03",
+    "courseCode": "MATH217",
+    "semester": "Fall 2016",
+    "instructorId": 21,
+    "capacity": 30,
+    "availableSeats": 0
+  }
+]

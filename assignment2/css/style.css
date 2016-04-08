@@ -1,0 +1,41 @@
+body {
+  width: 98%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5px;
+}
+
+header{
+  border-style: solid;
+  background-color: lightyellow;
+  text-align: center;
+}
+
+
+h1 {
+  color: #00BCD4;
+  font-family: Cambria;
+}
+
+label, th, h4 {
+  font-size: large ;
+  font-family: Cambria;
+}
+
+th{
+  text-align: center;
+}
+
+p {
+  font-size: large ;
+  font-family: Cambria ;
+}
+
+h3 {
+  color: brown;
+  font-family: Cambria;
+}
+
+input[type=text], input[type=password]{
+  background-color: lightyellow;
+}

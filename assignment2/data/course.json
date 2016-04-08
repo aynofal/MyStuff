@@ -1,0 +1,26 @@
+[
+  {
+    "courseCode": "GENG107",
+    "courseName": "Engineering Skills and Ethics"
+  },
+  {
+    "courseCode": "GENG200",
+    "courseName": "Probability and Statistics for Engineers"
+  },
+  {
+    "courseCode": "GENG300",
+    "courseName": "Numerical Methods"
+  },
+  {
+    "courseCode": "GENG360",
+    "courseName": "Engineering Economics"
+  },
+  {
+    "courseCode": "MATH211",
+    "courseName": "Calculus II"
+  },
+  {
+    "courseCode": "MATH217",
+    "courseName": "Mathematics for Engineers"
+  }
+]
