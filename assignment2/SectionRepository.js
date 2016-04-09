@@ -49,7 +49,7 @@ class SectionRepository{
             this.getSections().then(a => {
                 a = a.filter(s => s.crn === crn);
                 if (a.length > 0) {
-                    resolve(a);
+                    resolve(a[0]);
                 }
                 else {
                     reject("Not found!");

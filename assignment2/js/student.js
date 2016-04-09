@@ -1,5 +1,5 @@
 /**
- * Created by root on 4/9/16.
+ *  Created by root on 4/9/16.
  */
 'use strict';
 $(document).ready(function(){
@@ -14,9 +14,9 @@ $(document).ready(function(){
                 requests = requests.filter(r=>student.studentId==r.studentId);
                 for(let i=0; i<requests.length; i++){
                     fetch('/api/sections_crn/'+requests[i].crn).then(section=>section.json()).then(section=>{
-                        console.log(section);
                         fetch('http://localhost:9090/api/courses/'+section.courseCode).then(course=>course.json()).then(course=>{
-                            requests[i].courseName=course.courseName;
+                            requests[i].courseName=course.courseName+' '+section.sectionCode;
+                            $('#requests-table').html(requestsTemplate({requests}));
                         });
                     });
                 }
@@ -27,7 +27,6 @@ $(document).ready(function(){
         });
     });
 });
-function getCourse
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");

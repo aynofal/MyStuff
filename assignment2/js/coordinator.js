@@ -15,7 +15,7 @@ $(document).ready(function(){
                     for(let i=0; i<sections.length; i++){
                         if(sections[i].crn==r.crn) {
                             fetch('http://localhost:9090/api/courses/'+sections[i].courseCode).then(course=>course.json()).then(course=>{
-                                r.courseName=course.courseName;
+                                r.courseName=course.courseName+' '+sections[i].sectionCode;
                                 $('#requests-table').html(requestsTemplate({requests}));
                             });
                             return r;
