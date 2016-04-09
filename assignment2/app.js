@@ -4,7 +4,8 @@
 "use strict";
 let express = require("express");
 let requestRepository = require("./RequestRepository");
-let userRepository = require("./UserRepository")
+let userRepository = require("./UserRepository");
+let sectionRepository = require("./SectionRepository");
 
 let app = express();
 app.use(express.static(__dirname));
@@ -40,6 +41,23 @@ app.get('/api/users/:username', (req, res) => {
         res.json(user);
     }).catch(err => {
         res.send("Failed: " + err);
+    });
+});
+app.get('/api/sections',(req,res)=>{
+    sectionRepository.getSections().then(requests=>{
+        console.log(requests);
+        res.json(requests);
+    });
+});
+app.get('/api/sections/:instructorId', (req, res) => {
+    let instructorId = req.params.instructorId;
+    console.log(instructorId);
+    console.log('req.params.instructorId', instructorId);
+    sectionRepository.getSectionByStaff(parseInt(instructorId)).then(crs=>{
+        console.log(crs);
+        res.json(crs);
+    }).catch(err=>{
+        res.send("Fail: "+err);
     });
 });
 

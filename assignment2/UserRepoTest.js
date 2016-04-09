@@ -15,3 +15,6 @@ userRepository.getUser('student99').then(requests => {
 userRepository.getUser('ce').then(requests => {
     console.log(requests);
 });
+userRepository.getInstructor(12).then(requests => {
+    console.log(requests);
+});

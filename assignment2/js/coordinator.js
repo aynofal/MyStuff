@@ -8,15 +8,18 @@ $(document).ready(function(){
     fetch(userFetcher).then(res=>res.json()).then(a=>{
         let fullname=a.firstname+' '+a.lastname;
         document.getElementById('userFullname').innerHTML = fullname;
+        let url = 'http://localhost:9090/api/requests';
+        fetch('http://localhost:9090/api/sections/'+a.staffNo).then(sections=>{
+            console.log(kkkk);
+            fetch(url).then(response=>response.json()).then(requests=>{
+                requests=requests.filter(r=>r.crn===sections.crn);
+                console.log(requests);
+                let htmlTemplate = $('#requests-template').html(),
+                    requestsTemplate = Handlebars.compile(htmlTemplate);
+                $('#requests-table').html(requestsTemplate({requests}));
+            });
+        });
     });
-    let url = 'http://localhost:9090/api/requests';
-    fetch(url).then(response=>response.json()).then(requests=>{
-        console.log(requests);
-        let htmlTemplate = $('#requests-template').html(),
-            requestsTemplate = Handlebars.compile(htmlTemplate);
-        $('#requests-table').html(requestsTemplate({requests}));
-    });
-    console.log(username);
 });
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
