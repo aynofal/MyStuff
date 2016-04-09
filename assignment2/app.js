@@ -60,6 +60,17 @@ app.get('/api/sections',(req,res)=>{
         res.json(requests);
     });
 });
+app.get('/api/sections_crn/:crn', (req, res) => {
+    let crn = req.params.crn;
+    console.log(crn);
+    console.log('req.params.crn', crn);
+    sectionRepository.getSection(parseInt(crn)).then(crs=>{
+        console.log(crs);
+        res.json(crs);
+    }).catch(err=>{
+        res.send("Fail: "+err);
+    });
+});
 app.get('/api/sections/:instructorId', (req, res) => {
     let instructorId = req.params.instructorId;
     console.log(instructorId);

@@ -5,9 +5,40 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="./js/student.js"></script>
 </head>
 
 <body>
+<script id="requests-template" type="text/x-handlebars-template">
+  {{#each requests}}
+  <tr>
+    <td>{{requestId}}</td>
+    <td>{{crn}}</td>
+    <td>{{courseName}}</td>
+    <td>{{reason}}</td>
+    <td>
+      {{#if decision}}
+      {{decision}}
+      {{else}}
+        Pending
+      {{/if}}
+    </td>
+    <td>
+      {{#if decision}}
+      {{comment}}
+      {{/if}}
+    </td>
+    <td>
+      {{#if decision}}
+      {{else}}
+        <a href="">Cancel</a>
+      {{/if}}
+    </td>
+  </tr>
+  {{/each}}
+</script>
   <header>
     <p class="text-right"><i class="fa fa-user">&nbsp;&nbsp;</i>
       Welcome <span id="userFullname">Fulan Ibn Fulan</span>&nbsp;&nbsp;
@@ -29,46 +60,7 @@
     <th></th>
     </thead>
 
-    <tbody>
-    <tr>
-      <td>1</td>
-      <td>15151</td>
-      <td>CMPS 151 Programming Concepts (L51)</td>
-      <td>Need to register this course or I will go on strike</td>
-      <td>Rejected</td>
-      <td>There are sections with available spots</td>
-      <td></td>
-    </tr>
-
-    <tr>
-      <td>2</td>
-      <td>15251</td>
-      <td>CMPS 152 Programming Concepts Lab (B51)</td>
-      <td>Need to register this course or else</td>
-      <td></td>
-      <td></td>
-      <td><button type="button" class="btn btn-danger">Cancel</button></td>
-    </tr>
-
-    <tr>
-      <td>3</td>
-      <td>35651</td>
-      <td>CMPS 356 Entrepise App Development (L51)</td>
-      <td>Need to register this course to change the world</td>
-      <td>Rejected</td>
-      <td>Need to specify whether to the better or worse!</td>
-      <td></td>
-    </tr>
-
-    <tr>
-      <td>3</td>
-      <td>35651</td>
-      <td>CMPS 356 Enterprise App Development (L51)</td>
-      <td>Need to register this course to bring peace to the world</td>
-      <td>Accepted</td>
-      <td>Go for it! All the best</td>
-      <td></td>
-    </tr>
+    <tbody id="requests-table">
     </tbody>
   </table>
 </body>

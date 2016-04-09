@@ -1,5 +1,5 @@
 /**
- * Created by root on 4/6/16.
+ * Created by root on 4/9/16.
  */
 'use strict';
 $(document).ready(function(){
@@ -9,23 +9,15 @@ $(document).ready(function(){
         let fullname=a.firstname+' '+a.lastname;
         document.getElementById('userFullname').innerHTML = fullname;
         let url = 'http://localhost:9090/api/requests';
-        fetch('http://localhost:9090/api/sections/'+a.staffNo).then(sections=>sections.json()).then(sections=>{
+        fetch('/api/student/'+a.studentId).then(student=>student.json()).then(student=>{
             fetch(url).then(response=>response.json()).then(requests=>{
-                requests=requests.filter(r=>{
-                    for(let i=0; i<sections.length; i++){
-                        if(sections[i].crn==r.crn) {
-                            fetch('http://localhost:9090/api/courses/'+sections[i].courseCode).then(course=>course.json()).then(course=>{
-                                r.courseName=course.courseName;
-                                $('#requests-table').html(requestsTemplate({requests}));
-                            });
-                            return r;
-                        }
-                    }
-                });
+                requests = requests.filter(r=>student.studentId==r.studentId);
                 for(let i=0; i<requests.length; i++){
-                    fetch('http://localhost:9090/api/student/'+requests[i].studentId).then(stud=>stud.json()).then(stud=>{
-                        requests[i].studentName=stud.firstname+' '+stud.lastname;
-                        $('#requests-table').html(requestsTemplate({requests}));
+                    fetch('/api/sections_crn/'+requests[i].crn).then(section=>section.json()).then(section=>{
+                        console.log(section);
+                        fetch('http://localhost:9090/api/courses/'+section.courseCode).then(course=>course.json()).then(course=>{
+                            requests[i].courseName=course.courseName;
+                        });
                     });
                 }
                 let htmlTemplate = $('#requests-template').html(),
@@ -35,7 +27,7 @@ $(document).ready(function(){
         });
     });
 });
-
+function getCourse
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
