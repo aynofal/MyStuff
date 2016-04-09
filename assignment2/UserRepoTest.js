@@ -8,7 +8,7 @@ userRepository.getStaffUsers().then(requests => {
 });
 userRepository.getStudentUsers().then(requests => {
     console.log(requests);
-});
+});/*
 userRepository.getUser('student99').then(requests => {
     console.log(requests);
 });
@@ -16,5 +16,8 @@ userRepository.getUser('ce').then(requests => {
     console.log(requests);
 });
 userRepository.getInstructor(12).then(requests => {
+    console.log(requests);
+});*/
+userRepository.getStudent(2015001).then(requests => {
     console.log(requests);
 });

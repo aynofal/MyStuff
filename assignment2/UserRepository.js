@@ -88,5 +88,18 @@ class UserRepository{
             });
         });
     }
+    getStudent(studentId) {
+        return new Promise((resolve, reject) => {
+            this.getStudentUsers().then(users => {
+                users = users.filter(u => u.studentId === studentId);
+                if (users.length > 0) {
+                    resolve(users[0]);
+                }
+                else {
+                    reject("No such user exists.");
+                }
+            });
+        });
+    }
 }
 module.exports = new UserRepository();

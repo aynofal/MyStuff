@@ -13,13 +13,21 @@ $(document).ready(function(){
             fetch(url).then(response=>response.json()).then(requests=>{
                 requests=requests.filter(r=>{
                     for(let i=0; i<sections.length; i++){
-                        console.log(sections[i]);
-                        if(sections[i].crn==r.crn)
+                        if(sections[i].crn==r.crn) {
+                            fetch('http://localhost:9090/api/courses/'+sections[i].courseCode).then(course=>course.json()).then(course=>{
+                                r.courseName=course.courseName;
+                                $('#requests-table').html(requestsTemplate({requests}));
+                            })
                             return r;
+                        }
                     }
                 });
-                console.log(requests);
-                console.log('hello!');
+                for(let i=0; i<requests.length; i++){
+                    fetch('http://localhost:9090/api/student/'+requests[i].studentId).then(stud=>stud.json()).then(stud=>{
+                        requests[i].studentName=stud.firstname+' '+stud.lastname;
+                        $('#requests-table').html(requestsTemplate({requests}));
+                    });
+                }
                 let htmlTemplate = $('#requests-template').html(),
                     requestsTemplate = Handlebars.compile(htmlTemplate);
                 $('#requests-table').html(requestsTemplate({requests}));

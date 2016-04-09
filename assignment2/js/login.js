@@ -17,7 +17,7 @@ function doLogin(){
         }
         else{
             if(user.password===password)
-                window.location="http://localhost:9090/coordinator.html?username="+user.username;
+                window.location="http://localhost:9090/student.html?username="+user.username;
             else document.getElementById('invalid').innerHTML = 'Invalid Username or Password!';
         }
     });

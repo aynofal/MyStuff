@@ -18,19 +18,27 @@
     <tr>
         <td>{{requestId}}</td>
         <td>{{studentId}}</td>
-        <td>ToDo: Get names</td>
+        <td>{{studentName}}</td>
         <td>{{crn}}</td>
-        <td>ToDo: Get Program Name</td>
+        <td>{{courseName}}</td>
         <td>{{reason}}</td>
         <td>
+            {{#if decision}}
+                {{decision}}
+            {{else}}
             <select id="decision" class="form-control">
                 <option value=""></option>
                 <option value="Approved">Approved</option>
                 <option value="Rejected">Rejected</option>
             </select>
+            {{/if}}
         </td>
         <td>
+            {{#if decision}}
+                {{comment}}
+            {{else}}
             <textarea id="comment" class="form-control">{{comment}}</textarea>
+            {{/if}}
         </td>
     </tr>
     {{/each}}

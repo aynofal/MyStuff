@@ -6,6 +6,7 @@ let express = require("express");
 let requestRepository = require("./RequestRepository");
 let userRepository = require("./UserRepository");
 let sectionRepository = require("./SectionRepository");
+let courseRepository = require("./CourseRepository");
 
 let app = express();
 app.use(express.static(__dirname));
@@ -43,6 +44,16 @@ app.get('/api/users/:username', (req, res) => {
         res.send("Failed: " + err);
     });
 });
+app.get('/api/student/:studentId', (req, res) => {
+    let studentId = req.params.studentId;
+    console.log('req.params.studentId ', studentId);
+    userRepository.getStudent(parseInt(studentId)).then(user => {
+        console.log(JSON.stringify(user, null, 2));
+        res.json(user);
+    }).catch(err => {
+        res.send("Failed: " + err);
+    });
+});
 app.get('/api/sections',(req,res)=>{
     sectionRepository.getSections().then(requests=>{
         console.log(requests);
@@ -60,7 +71,22 @@ app.get('/api/sections/:instructorId', (req, res) => {
         res.send("Fail: "+err);
     });
 });
-
+app.get('/api/courses/:courseCode', (req, res) => {
+    let courseCode = req.params.courseCode;
+    console.log('req.params.courseCode', courseCode);
+    courseRepository.getCoursesbyCourseCode(courseCode).then(courses => {
+        console.log(JSON.stringify(courses, null, 2));
+        res.json(courses);
+    }).catch(err => {
+        res.send("Failed :" + err);
+    });
+});
+app.get('/api/courses' ,(req , res) => {
+    courseRepository.getCourses().then(courses =>{
+        console.log(courses);
+        res.json(courses);
+    });
+});
 
 app.listen(port, function(){
     console.log("Listening @ http://localhost:"+port);
